@@ -1,0 +1,20 @@
+<%- include('partials/header') %>
+
+<section class="checkout-page">
+  <h2>Checkout</h2>
+
+  <form action="/place-order" method="POST" class="checkout-form">
+    <label>Name:</label>
+    <input type="text" name="name" required>
+
+    <label>Address:</label>
+    <textarea name="address" required></textarea>
+
+    <label>Phone Number:</label>
+    <input type="text" name="phone" required>
+
+    <button type="submit" class="place-order-btn">Place Order</button>
+  </form>
+</section>
+
+<%- include('partials/footer') %>

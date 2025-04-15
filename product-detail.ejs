@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/header') %>
+    <style>
+      body {
+        font-family: 'Segoe UI', sans-serif;
+        background: #f3f7fa;
+      }
+
+      .product-detail {
+        max-width: 700px;
+        margin: 80px auto;
+        background: #ffffff;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        animation: fadeIn 0.6s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      .product-detail img {
+        width: 140px;
+        height: auto;
+        margin-bottom: 25px;
+        transition: transform 0.3s ease;
+      }
+
+      .product-detail img:hover {
+        transform: scale(1.05);
+      }
+
+      .product-detail h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        color: #0077cc;
+      }
+
+      .product-detail p {
+        font-size: 1.1rem;
+        color: #333;
+        margin: 10px 0;
+      }
+
+      .price {
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: #2ecc71;
+      }
+
+      .quote {
+        font-style: italic;
+        color: #555;
+        margin-top: 25px;
+        font-size: 1rem;
+      }
+
+      .btn {
+        display: inline-block;
+        margin-top: 25px;
+        padding: 12px 26px;
+        background: #0077cc;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background 0.3s ease;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        background: #005fa3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="product-detail">
+      <img src="<%= product.image %>" alt="<%= product.name %>">
+      <h1><%= product.name %></h1>
+      <p class="price">Price: <%= product.price %></p>
+      <p><%= product.description %></p>
+
+      <form action="/add-to-cart" method="POST">
+        <input type="hidden" name="id" value="<%= product.id || product.name %>">
+        <input type="hidden" name="name" value="<%= product.name %>">
+        <input type="hidden" name="image" value="<%= product.image %>">
+        <input type="hidden" name="price" value="<%= product.price %>">
+        <button class="btn" type="submit">Add to Cart</button>
+      </form>
+
+      <p class="quote">🚀 Delivery in just <strong>10 minutes</strong> — because we care like Mom does.</p>
+      <p class="quote">❤️ "Health is not just the absence of illness. It's the presence of care."</p>
+    </div>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>

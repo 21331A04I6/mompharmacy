@@ -1,0 +1,199 @@
+<%- include('partials/header') %>
+
+<div class="hero">
+  <div class="hero-text">
+    <h1>Medicines to Your<br><span class="highlight">Doorstep in 10 Minutes!</span></h1>
+    <p>Delivery in 10 Minutes. <br>From our pharmacy to your doorstep – health made easy.
+        Because your health deserves the best care.</p>
+  </div>
+  <img src="/images/rocket.jpg" alt="Rocket" class="hero-img">
+</div>
+
+<div class="category-container">
+  <div class="category-icon diagnosis">
+    <img src="/images/diagnosis.jpg" alt="Diagnosis">
+    <p><strong>Diagnosis</strong></p>
+  </div>
+  <div class="category-icon fever">
+    <img src="/images/fever.jpg" alt="Fever">
+    <p><strong>Fever</strong></p>
+  </div>
+  <div class="category-icon babycare">
+    <img src="/images/baby care.jpg" alt="Baby Care">
+    <p><strong>Baby Care</strong></p>
+  </div>
+  <div class="category-icon diabetes">
+    <img src="/images/diabetes.jpg" alt="Diabetes">
+    <p><strong>Diabetes</strong></p>
+  </div>
+</div>
+
+<section class="categories">
+  <h2 class="section-title">Product Categories</h2>
+
+  <div class="products">
+    <div class="product-card">
+      <img src="/images/antibiotics.jpg" alt="Antibiotics">
+      <h3>Antibiotics</h3>
+      <p>Antibiotics for selves</p>
+      <form action="/add-to-cart" method="POST">
+        <input type="hidden" name="id" value="1">
+        <input type="hidden" name="name" value="Antibiotics">
+        <input type="hidden" name="price" value="150">
+        <input type="hidden" name="image" value="/images/antibiotics.jpg">
+        <input type="number" name="quantity" value="1" min="1">
+        <button type="submit">Add to Cart</button>
+      </form>
+    </div>
+
+    <div class="product-card">
+      <img src="/images/pain-relief.jpg" alt="Pain Relief">
+      <h3>Pain Relief</h3>
+      <p>Fewer for antioyticrss</p>
+      <form action="/add-to-cart" method="POST">
+        <input type="hidden" name="id" value="2">
+        <input type="hidden" name="name" value="Pain Relief">
+        <input type="hidden" name="price" value="100">
+        <input type="hidden" name="image" value="/images/pain-relief.jpg">
+        <input type="number" name="quantity" value="1" min="1">
+        <button type="submit">Add to Cart</button>
+      </form>
+    </div>
+
+    <div class="product-card">
+      <img src="/images/baby care.jpg" alt="Baby Care">
+      <h3>Baby Care</h3>
+      <p>Prescription medical</p>
+      <form action="/add-to-cart" method="POST">
+        <input type="hidden" name="id" value="3">
+        <input type="hidden" name="name" value="Baby Care">
+        <input type="hidden" name="price" value="200">
+        <input type="hidden" name="image" value="/images/baby care.jpg">
+        <input type="number" name="quantity" value="1" min="1">
+        <button type="submit">Add to Cart</button>
+      </form>
+    </div>
+
+    <div class="product-card">
+        <img src="/images/vitamins.jpg" alt="Vitamins">
+        <h3>Vitamins</h3>
+        <p>Boost your health with essential vitamins</p>
+        <form action="/add-to-cart" method="POST">
+            <input type="hidden" name="id" value="3">
+            <input type="hidden" name="name" value="Vitamins">
+            <input type="hidden" name="price" value="150">
+            <input type="hidden" name="image" value="/images/vitamins.jpg">
+            <input type="number" name="quantity" value="1" min="1">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+
+    <div class="product-card">
+      <img src="/images/diabetes.jpg" alt="Diabetes">
+      <h3>Diabetes</h3>
+      <p>Insulin pen injections</p>
+      <form action="/add-to-cart" method="POST">
+        <input type="hidden" name="id" value="4">
+        <input type="hidden" name="name" value="Diabetes">
+        <input type="hidden" name="price" value="250">
+        <input type="hidden" name="image" value="/images/diabetes.jpg">
+        <input type="number" name="quantity" value="1" min="1">
+        <button type="submit">Add to Cart</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="why-choose">
+    <h2 class="section-title">Why Choose Mom Pharmacy?</h2>
+    <div class="features-container">
+      <div class="feature-box">
+        <img src="/images/trusted.jpg" alt="Trusted">
+        <h3>Trusted by Families</h3>
+        <p>We ensure authentic and quality medicines delivered with care.</p>
+      </div>
+      <div class="feature-box">
+        <img src="/images/delivery.jpg" alt="Fast Delivery">
+        <h3>Fast Delivery</h3>
+        <p>Get your medicines quickly with our reliable doorstep service.</p>
+      </div>
+      <div class="feature-box">
+        <img src="/images/support.jpg" alt="24x7 Support">
+        <h3>24x7 Support</h3>
+        <p>Our team is here round the clock to assist you with your needs.</p>
+      </div>
+    </div>
+</section>
+
+<section class="search-bar">
+  <h2>Search for Medicines</h2>
+  <form action="/search" method="GET">
+    <input type="text" name="query" placeholder="Search for products..." required>
+    <button type="submit">Search</button>
+  </form>
+</section>
+
+<section class="testimonials">
+  <h2 class="section-title">What Our Customers Say</h2>
+  <div class="testimonial-box">
+    <p>"Fast delivery, excellent service, and genuine products!"</p>
+    <h4>Manojkumar</h4>
+    <p>⭐⭐⭐⭐⭐</p>
+  </div>
+  <div class="testimonial-box">
+    <p>"I can always rely on Mom Pharmacy for my health needs!"</p>
+    <h4>jnaneswari</h4>
+    <p>⭐⭐⭐⭐⭐</p>
+  </div>
+</section>
+
+<section class="featured-products">
+  <h2 class="section-title">Featured Products</h2>
+  <div class="product-card">
+    <img src="/images/antibiotics.jpg" alt="Antibiotics">
+    <h3>Antibiotics</h3>
+    <p>Top-rated for quick relief</p>
+    <button>View Details</button>
+  </div>
+</section>
+
+<section class="special-offers">
+  <h2 class="section-title">Special Offers</h2>
+  <div class="offer-box">
+    <p>Get 20% off on all Pain Relief products!</p>
+    <a href="#">Shop Now</a>
+  </div>
+</section>
+
+<section class="newsletter">
+  <h2 class="section-title">Subscribe to Our Newsletter</h2>
+  <form action="/subscribe" method="POST">
+    <input type="email" name="email" placeholder="Enter your email" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</section>
+
+<section class="categories-quick-access">
+  <h2 class="section-title">Shop by Category</h2>
+  <div class="category-links">
+    <a href="/category/antibiotics">Antibiotics</a>
+    <a href="/category/pain-relief">Pain Relief</a>
+    <a href="/category/diabetes">Diabetes</a>
+    <a href="/category/baby-care">Baby Care</a>
+  </div>
+</section>
+
+<section class="track-order">
+  <h2 class="section-title">Track Your Order</h2>
+  <form action="/track-order" method="GET">
+    <input type="text" name="order-id" placeholder="Enter Order ID" required>
+    <button type="submit">Track Order</button>
+  </form>
+</section>
+
+<section class="chatbot">
+  <h2 class="section-title">Need Help? Chat with Us</h2>
+  <button id="chatbot-button">Start Chat</button>
+</section>
+
+<%- include('partials/footer') %>

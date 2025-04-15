@@ -1,0 +1,27 @@
+<%- include('partials/header') %>
+
+<section class="confirmation-page">
+  <div class="confirmation-box">
+    <h2>Order Confirmed!</h2>
+    <p>Thank you, <strong><%= order.name %></strong>!</p>
+    <p>Your order has been placed successfully.</p>
+
+    <h3>Order Summary</h3>
+    <ul class="order-items">
+      <% order.cart.forEach(item => { %>
+        <li>
+          <strong><%= item.name %></strong> — ₹<%= item.price %> × <%= item.quantity %> = ₹<%= item.price * item.quantity %>
+        </li>
+      <% }) %>
+    </ul>
+
+    <p class="order-total">Total Amount: ₹<%= order.total %></p>
+
+    <p>We’ll deliver to: <strong><%= order.address %></strong></p>
+    <p>Contact Number: <strong><%= order.phone %></strong></p>
+
+    <a href="/" class="home-link">Back to Home</a>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

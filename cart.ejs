@@ -1,0 +1,44 @@
+<%- include('partials/header') %>
+
+<section class="cart-page">
+  <h2>Your Cart</h2>
+
+  <% if (cart.length === 0) { %>
+    <p>Your cart is empty. <a href="/">Start shopping</a></p>
+  <% } else { %>
+    <table class="cart-table">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Subtotal</th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% cart.forEach(item => { %>
+          <tr>
+            <td><%= item.name %></td>
+            <td>₹<%= item.price %></td>
+            <td><%= item.quantity %></td>
+            <td>₹<%= item.price * item.quantity %></td>
+            <td>
+              <form action="/remove-from-cart" method="POST">
+                <input type="hidden" name="id" value="<%= item.id %>">
+                <button type="submit" class="remove-btn">Remove</button>
+              </form>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+
+    <div class="cart-total">
+      <h3>Total: ₹<%= total %></h3>
+      <a href="/checkout" class="checkout-btn">Proceed to Checkout</a>
+    </div>
+  <% } %>
+</section>
+
+<%- include('partials/footer') %>
